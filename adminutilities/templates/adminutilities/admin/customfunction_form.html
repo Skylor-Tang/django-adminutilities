@@ -1,0 +1,66 @@
+{% extends 'admin/base_site.html' %}
+{% block content %}
+<div id="content-main">
+  <h2>Custom Function</h2>
+  <form id="custom-function-form" method="post" action=".">
+    {% csrf_token %} 
+    {% for app_name, func_list in admin_tool_functions.items %}
+    <div class="module">
+      <strong>{{ app_name }}</strong>
+      {% for func_name, func_path in func_list %}
+      <div>
+        <input
+          style="margin-left: 15px"
+          type="checkbox"
+          name="function_path"
+          value="{{ func_path }}"
+        />
+        {{ func_name }}
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+    <div class="submit-row" style="display: inline-block">
+      <input
+        type="submit"
+        class="button"
+        name="customfunction"
+        value="Execute selected operation now 🚀"
+        onclick="showLoader()"
+      />
+      <div
+        id="loader"
+        style="display: none; vertical-align: middle; margin-left: 10px"
+      ></div>
+    </div>
+  </form>
+</div>
+
+<style>
+  #loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+<script>
+  const showLoader = () => {
+    const loader = document.getElementById("loader");
+    loader.style.display = "inline-block";
+  };
+</script>
+
+{% endblock %}
