@@ -3,11 +3,11 @@ django-adminutilities
 =====================
 
 
-.. image:: https://img.shields.io/pypi/v/adminutilities.svg
-    :target: https://pypi.python.org/pypi/adminutilities
+.. image:: https://img.shields.io/pypi/v/django-adminutilities.svg
+    :target: https://pypi.python.org/pypi/django-adminutilities
 
-.. image:: https://img.shields.io/travis/Skylor-Tang/adminutilities.svg
-    :target: https://travis-ci.com/Skylor-Tang/adminutilities
+.. image:: https://img.shields.io/travis/Skylor-Tang/django-adminutilities.svg
+    :target: https://travis-ci.com/Skylor-Tang/django-adminutilities
 
 
 Allow calling registered custom functions (system tools, script functions, etc.) via admin UI or `manage.py` command.

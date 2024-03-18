@@ -1,8 +1,14 @@
 #!/usr/bin/env python
 
 """The setup script."""
-
+import re
+import subprocess
 from setuptools import setup, find_packages
+
+
+# Get the latest release version from git tags
+latest_release = subprocess.check_output(['git', 'describe', '--tags']).decode().strip()
+latest_version = re.match(r'^.*?(\d+\.\d+\.\d+).*$', latest_release).group(1)
 
 with open('README.rst') as readme_file:
     readme = readme_file.read()
@@ -27,6 +33,8 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
     ],
     description="Allow calling registered custom functions (system tools, script functions, etc.)  via admin UI or manage.py command.",
     install_requires=requirements,
@@ -38,7 +46,7 @@ setup(
     packages=find_packages(include=['adminutilities', 'adminutilities.*']),
     test_suite='tests',
     tests_require=test_requirements,
-    url='https://github.com/Skylor-Tang/adminutilities',
-    version='0.1.0',
+    url='https://github.com/Skylor-Tang/django-adminutilities',
+    version=latest_version,
     zip_safe=False,
 )
