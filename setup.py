@@ -1,14 +1,19 @@
 #!/usr/bin/env python
 
 """The setup script."""
+import os
 import re
-import subprocess
 from setuptools import setup, find_packages
 
 
-# Get the latest release version from git tags
-latest_release = subprocess.check_output(['git', 'describe', '--tags']).decode().strip()
-latest_version = re.match(r'^.*?(\d+\.\d+\.\d+).*$', latest_release).group(1)
+def get_version(package):
+    """
+    Return package version as listed in `__version__` in `init.py`.
+    """
+    init_py = open(os.path.join(package, '__init__.py')).read()
+    return re.search("__version__ = ['\"]([^'\"]+)['\"]", init_py).group(1)
+
+latest_version = get_version('adminutilities')
 
 with open('README.rst') as readme_file:
     readme = readme_file.read()
