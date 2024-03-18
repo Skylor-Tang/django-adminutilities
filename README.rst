@@ -19,12 +19,13 @@ Installation
 
         pip install django-adminutilities
 
-2. Add `adminutilities` to your `INSTALLED_APPS` setting like this:
+2. Add `adminutilities` to your `INSTALLED_APPS` setting, make sure it's above `django.contrib.admin` like this:
 
     .. code-block:: python
 
         INSTALLED_APPS = [
              ...
+             'django.contrib.admin',
              'adminutilities',
         ]
 
