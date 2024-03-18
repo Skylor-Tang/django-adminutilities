@@ -1,28 +1,8 @@
 import importlib
 import os
 from collections import defaultdict
-from functools import wraps
 
 from django.apps import apps
-
-
-def register_tools(func):
-    """
-    Decorator function to mark a function as an admin tool.
-
-    Args:
-        func: The function to be marked as an admin tool.
-
-    Returns:
-        The wrapped function.
-    """
-    setattr(func, "is_admin_tools", True)
-
-    @wraps(func)
-    def wrapper(*args, **kwargs):
-        return func(*args, **kwargs)
-
-    return wrapper
 
 
 def get_register_admin_tool_functions():

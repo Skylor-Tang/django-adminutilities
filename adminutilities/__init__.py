@@ -11,9 +11,6 @@ r"""
 
 """
 
-
-from .utils import register_tools
-
 __title__ = "Django Adminutilities"
 __author__ = """tangmeijian"""
 __email__ = 'tang1996mei@gmail.com'
