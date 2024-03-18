@@ -14,4 +14,4 @@ r"""
 __title__ = "Django Adminutilities"
 __author__ = """tangmeijian"""
 __email__ = 'tang1996mei@gmail.com'
-__version__ = '0.1.2'
+__version__ = '0.1.3'
