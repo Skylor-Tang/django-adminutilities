@@ -12,6 +12,8 @@ django-adminutilities
 
 Allow calling registered custom functions (system tools, script functions, etc.) via admin UI or `manage.py` command.
 
+The inspiration for this library comes from `https://github.com/timonweb/django-clearcache`.
+
 Installation
 ------------
 
