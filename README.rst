@@ -24,9 +24,8 @@ Installation
     .. code-block:: python
 
         INSTALLED_APPS = [
-             ...
-             'django.contrib.admin',
-             'adminutilities',
+            'adminutilities',
+            'django.contrib.admin',
         ]
 
 3. Add `adminutilities.middleware.GetAllAdminToolFunctionsMiddleware` to your `MIDDLEWARE` setting like this:
@@ -34,8 +33,8 @@ Installation
     .. code-block:: python
 
         MIDDLEWARE = [
-             ...
-             'adminutilities.middleware.GetAllAdminToolFunctionsMiddleware',
+            ...
+            'adminutilities.middleware.GetAllAdminToolFunctionsMiddleware',
         ]
 
 4. Add `adminutilities` to your `urls.py`:
@@ -43,9 +42,9 @@ Installation
     .. code-block:: python
 
         urlpatterns = [
-             ...
-             path('admin/', admin.site.urls),
-             path('admin/adminutilities/', include('adminutilities.urls')),
+            ...
+            path('admin/', admin.site.urls),
+            path('admin/adminutilities/', include('adminutilities.urls')),
         ]
 
 Usage
